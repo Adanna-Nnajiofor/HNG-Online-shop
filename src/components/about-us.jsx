@@ -7,7 +7,7 @@ const About = () => {
       id="about"
       className="w-full h-full justify-center flex items-center"
     >
-      <div className="about-1 w-[1512px] h-[634px] mt-[100px] py-[20px] px-[100px] gap-[20px]">
+      <div className="about-1 w-[1512px] h-[634px] mt-[10px] py-[20px] px-[100px] gap-[20px]">
         <h2 className="w-[121px] h-[36px] font-inter text-[26px] font-bold leading-[36px] text-left text-[#303030] ">
           About Us
         </h2>
