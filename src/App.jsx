@@ -10,7 +10,7 @@ import NotFound from "./pages/notfound";
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col h-full w-full">
+      <div className="flex flex-col w-full">
         <Routes>
           <Route path="/" element={<RootPage />}>
             <Route index element={<Home />} />

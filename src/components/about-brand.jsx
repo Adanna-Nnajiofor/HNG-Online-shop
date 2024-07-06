@@ -1,23 +1,28 @@
 import React from "react";
-import AboutImage from "../assets/images/Rectangle 82.png";
-import AboutBrand from "./about-brand";
-import Customers from "./customer";
+import brandImage from "../assets/images/Rectangle brand.png"; // Adjust the path to your image
 
-const About = () => {
+const AboutBrand = () => {
   return (
     <section
       id="about"
       className="w-full justify-center flex flex-col items-center"
     >
-      <div className="about-1 max-w-[1512px] mt-10 py-8 px-6 lg:px-20 gap-6">
-        <h2 className="w-auto text-2xl lg:text-4xl font-bold text-gray-800">
-          About Us
-        </h2>
-        <div className="about-2 grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-10">
-          <div className="about-1-text">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
-              About our Brand
-            </h3>
+      <div className="about-brand max-w-[1512px] pt-10 px-6 lg:px-20 py-8 gap-6 border-b-[0.5px] border-solid border-[#E5E5E5]">
+        <h3 className="w-auto text-2xl lg:text-4xl font-bold text-gray-800 text-left">
+          Previous Products
+        </h3>
+        <div className="about-brand-1 flex flex-col lg:flex-row w-full mt-6 lg:mt-10 gap-6">
+          <div className="about-brand-1-images w-full lg:max-w-[646px] h-auto">
+            <img
+              src={brandImage}
+              alt="Brand"
+              className="w-full h-auto lg:h-[498px] rounded-lg"
+            />
+          </div>
+          <div className="about-brand-1-text w-full lg:max-w-[646px]">
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
+              About our brand
+            </h2>
             <p className="text-base lg:text-lg text-gray-700 leading-7">
               Grazy is a dynamic and innovative e-commerce shoe brand dedicated
               to offering a diverse range of stylish and high-quality foot wears
@@ -34,19 +39,10 @@ const About = () => {
               Learn more
             </button>
           </div>
-          <div className="about-1-image w-full h-auto">
-            <img
-              src={AboutImage}
-              alt="About Us Image"
-              className="w-full h-auto lg:h-[498px] object-cover rounded-lg"
-            />
-          </div>
         </div>
       </div>
-      <AboutBrand />
-      <Customers />
     </section>
   );
 };
 
-export default About;
+export default AboutBrand;

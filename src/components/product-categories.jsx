@@ -4,6 +4,9 @@ import footWear1 from "../assets/images/Rectangle 81.png";
 import footWear2 from "../assets/images/image 1.png";
 import footWear3 from "../assets/images/image 2.png";
 import footWear4 from "../assets/images/image 3.png";
+import footWear5 from "../assets/images/Frame 161.png";
+import footWear6 from "../assets/images/image shoe 1.png";
+import footWear7 from "../assets/images/image shoe.png";
 
 const ProductCategories = [
   {
@@ -43,28 +46,28 @@ const ProductCategories = [
     category: "Crocs and Sandals",
     products: [
       {
-        image: footWear2,
+        image: footWear5,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$15",
         buttonText: "Buy Now",
       },
       {
-        image: footWear3,
+        image: footWear5,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$30",
         buttonText: "Buy Now",
       },
       {
-        image: footWear4,
+        image: footWear6,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$25",
         buttonText: "Buy Now",
       },
       {
-        image: footWear1,
+        image: footWear7,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$15",
@@ -76,28 +79,28 @@ const ProductCategories = [
     category: "Crocs and Sandals",
     products: [
       {
-        image: footWear2,
+        image: footWear5,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$15",
         buttonText: "Buy Now",
       },
       {
-        image: footWear3,
+        image: footWear5,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$30",
         buttonText: "Buy Now",
       },
       {
-        image: footWear4,
+        image: footWear6,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$25",
         buttonText: "Buy Now",
       },
       {
-        image: footWear1,
+        image: footWear7,
         title: "Canvas",
         description: "Available in all sizes",
         price: "$15",

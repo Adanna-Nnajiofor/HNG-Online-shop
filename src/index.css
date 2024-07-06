@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* src/index.css */
+.rotate-50 {
+  transform: rotate(-50.5deg);
+}
