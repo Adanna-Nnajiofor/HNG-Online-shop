@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ image, title, description, price, buttonText }) => {
   return (
-    <div className="max-w-[313px] w-full h-[478px] gap-4 flex flex-col rounded-[20px] border border-solid border-[#948E8E] p-4 bg-white">
+    <div className="max-w-[313px] w-full h-[478px] gap-4 flex flex-col rounded-[20px] border border-solid border-[#948E8E] p-4 bg-white hover:border-2 border-[#1A1B4B]">
       <div className="h-[278px] rounded-[20px] overflow-hidden">
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>

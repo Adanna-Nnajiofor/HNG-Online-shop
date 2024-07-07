@@ -7,10 +7,10 @@ const ContactUs = () => {
   return (
     <section
       id="contact"
-      className="w-full justify-center flex items-center mt-[250px]"
+      className="w-full justify-center flex items-center mt-20 lg:mt-[250px]"
     >
       <div className="relative w-full bg-[#1A1B4B] rounded-[2px]">
-        <div className="relative max-w-[1512px] mx-auto flex flex-col lg:flex-row rounded-[5px]">
+        <div className="relative w-full  mx-auto flex flex-col lg:flex-row rounded-[5px]">
           <div className="flex flex-col w-full lg:w-[full] py-20 px-10 lg:px-12">
             <div className="flex flex-col gap-8">
               <h1 className="text-3xl lg:text-5xl font-bold leading-[1.3] text-white">

@@ -1,7 +1,7 @@
 // src/components/Customers.js
 import React from "react";
-import CustomerCard from "./customer-card";
-import CustomerReviews from "./customer-reviews";
+import CustomerCard from "../customer components/customer-card";
+import CustomerReviews from "../customer components/customer-reviews";
 
 const Customers = () => {
   return (

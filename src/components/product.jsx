@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./card";
-import ProductCategories from "./product-categories";
+import Card from "../product components/card";
+import ProductCategories from "../product components/product-categories";
 
 const Product = () => {
   return (
