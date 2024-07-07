@@ -7,7 +7,7 @@ const ContactUs = () => {
   return (
     <section
       id="contact"
-      className="w-full justify-center flex items-center mt-10 lg:mt-[250px]"
+      className="w-full justify-center flex items-center mt-10 lg:mt-[200px]"
     >
       <div className="relative w-full bg-[#1A1B4B] rounded-[2px] py-10 lg:py-2">
         <div className="relative w-full  mx-auto flex flex-col lg:flex-row rounded-[5px]">
@@ -39,7 +39,7 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className="relative flex-shrink-0 mt-8">
+          <div className="relative flex-shrink-0 mt-8 px-6">
             <img
               src={contactImage}
               alt="Contact"

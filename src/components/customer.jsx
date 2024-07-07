@@ -5,7 +5,7 @@ import CustomerReviews from "../customer components/customer-reviews";
 
 const Customers = () => {
   return (
-    <div className="customers max-w-[1512px] mx-auto px-6 py-0 mt-2 lg:px-20 lg:py-8 flex flex-col gap-6 lg:gap-10 border-b-[0.5px] border-solid border-[#E5E5E5] lg:mt-10">
+    <div className="customers w-full lg:max-w-[1512px] mx-auto px-6 py-0 mt-2 lg:px-20 lg:py-8 flex flex-col gap-6 lg:gap-10 border-b-[0.5px] border-solid border-[#E5E5E5] lg:mt-10">
       <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 text-left">
         Customers Reviews
       </h2>

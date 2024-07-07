@@ -3,7 +3,7 @@ import React from "react";
 const CustomerCard = ({ image, name, review }) => {
   return (
     <div className="customer-card w-full lg:w-[313px] h-[306px] p-[10px_20px] flex flex-col gap-[10px] rounded-[20px] border-2 border-[#948E8E] bg-[#FFFFFF] ">
-      <div className="customer-card-1 w-[273px] h-[286px] flex flex-col gap-[10px] justify-center items-center">
+      <div className="customer-card-1 w-full lg:w-[273px] h-[286px] flex flex-col gap-[10px] justify-center items-center">
         <img
           src={image}
           alt={name}

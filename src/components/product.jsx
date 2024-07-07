@@ -8,7 +8,7 @@ const Product = () => {
       id="product"
       className="w-full justify-center flex flex-col items-center mt-3 lg:mt-8"
     >
-      <div className="w-full lg:max-w-[1512px] mx-auto px-6 py-10 flex flex-col">
+      <div className="w-full lg:max-w-[1512px] px-6 py-10 flex flex-col">
         <div className="w-full px-4">
           <h1 className="text-2xl font-bold text-gray-800">Our Products</h1>
         </div>

@@ -9,8 +9,8 @@ const About = () => {
       id="about"
       className="w-full justify-center flex flex-col items-center"
     >
-      <div className="about-1 max-w-[1512px] mt-0 lg:mt-10 py-0 lg:py-8 px-6 lg:px-20 gap-6">
-        <h2 className="w-auto text-2xl lg:text-4xl font-bold text-gray-800">
+      <div className="about-1 w-full lg:max-w-[1512px] mt-0 lg:mt-4 py-0 lg:py-8 px-6 lg:px-20 gap-6">
+        <h2 className=" text-2xl lg:text-4xl font-bold text-gray-800">
           About Us
         </h2>
         <div className="about-2 grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-10">
@@ -18,7 +18,7 @@ const About = () => {
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
               About our Brand
             </h3>
-            <p className="text-base lg:text-lg text-gray-700 leading-7">
+            <p className="text-base lg:text-lg text-gray-700 ">
               Grazy is a dynamic and innovative e-commerce shoe brand dedicated
               to offering a diverse range of stylish and high-quality foot wears
               for both men and women. Our collection features a blend of classic
