@@ -4,13 +4,13 @@ import Summary from "./summary";
 
 const MainContent = () => {
   return (
-    <div className="w-[1139px] h-full top-[50px] left-[373px] p-[33px 50px 19px 50px] bg-[#FFFFFF] flex flex-col items-center justify-center relative mb-[50px]">
+    <div className="w-full lg:w-[1139px] h-full py-6 lg:top-[10px] lg:left-[130px] px-6 lg:p-[33px_50px_19px_50px] bg-[#FFFFFF] flex flex-col items-center justify-center relative lg:mb-[50px]">
       {/* Checkout Main A */}
-      <div className="w-[1039px] h-[816px] top-[33px] left-[50px] gap-[0px] justify-between flex flex-row">
+      <div className="w-full lg:w-[1039px] h-auto lg:h-[816px] lg:top-[33px] lg:left-[50px] gap-[10px] justify-between flex flex-col lg:flex-row">
         {/* Checkout Main A1 */}
-        <div className="w-[510px] h-[816px] gap-[12px] flex flex-col">
+        <div className="w-full lg:w-[510px] h-auto lg:h-[816px] gap-[12px] flex flex-col">
           {/* Checkout Main A1 Text */}
-          <div className="w-[510px] h-[100px] gap-[0px]">
+          <div className="w-full h-[100px] gap-[0px]">
             <p className="font-family-Inter text-lg font-bold text-[#343697]">
               Step 01
             </p>
@@ -19,7 +19,7 @@ const MainContent = () => {
             </h1>
           </div>
           {/* Checkout Main A1 Input */}
-          <div className="w-[510px] h-[704px] gap-[30px] flex flex-col">
+          <div className="w-full h-auto gap-[30px] flex flex-col">
             {/* Input 1 - Full Name */}
             <div className="flex flex-col gap-[10px]">
               <label className="font-family-Inter text-[20px] font-[700] leading-[36px]">

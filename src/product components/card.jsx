@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ image, title, description, price, buttonText }) => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/cart");
+  };
+
   return (
     <div className="max-w-[313px] w-full h-[478px] gap-4 flex flex-col rounded-[20px] border border-solid border-[#948E8E] p-4 bg-white hover:border-2 border-[#1A1B4B]">
       <div className="h-[278px] rounded-[20px] overflow-hidden">
@@ -18,7 +25,10 @@ const Card = ({ image, title, description, price, buttonText }) => {
             {price}
           </p>
         </div>
-        <button className="w-full py-3 rounded-[30px] bg-[#1A1B4B] text-white mt-4">
+        <button
+          onClick={handleButtonClick}
+          className="w-full py-3 rounded-[30px] bg-[#1A1B4B] text-white mt-4"
+        >
           {buttonText}
         </button>
       </div>

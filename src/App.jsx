@@ -12,7 +12,7 @@ import CheckOut from "./pages/checkout";
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col h-full w-full items-center justify-center">
         <Routes>
           <Route path="/" element={<RootPage />}>
             <Route index element={<Home />} />

@@ -35,7 +35,7 @@ const AboutBrand = () => {
               comfortable casual wear, or trendy athletic footwear, Grazy has
               something for everyone.
             </p>
-            <button className="w-[219px] h-[60px] py-[12px] px-[40px] rounded-[30px] bg-[#1A1B4B] text-white mt-6">
+            <button className="w-full lg:w-[219px] h-[60px] py-[12px] px-[40px] rounded-[30px] bg-[#1A1B4B] text-white mt-6">
               Learn more
             </button>
           </div>

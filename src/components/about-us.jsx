@@ -9,7 +9,7 @@ const About = () => {
       id="about"
       className="w-full justify-center flex flex-col items-center"
     >
-      <div className="about-1 max-w-[1512px] mt-10 py-8 px-6 lg:px-20 gap-6">
+      <div className="about-1 max-w-[1512px] mt-0 lg:mt-10 py-0 lg:py-8 px-6 lg:px-20 gap-6">
         <h2 className="w-auto text-2xl lg:text-4xl font-bold text-gray-800">
           About Us
         </h2>
@@ -30,7 +30,7 @@ const About = () => {
               comfortable casual wear, or trendy athletic footwear, Grazy has
               something for everyone.
             </p>
-            <button className="w-[219px] h-[60px] py-[12px] px-[40px] rounded-[30px] bg-[#1A1B4B] text-white mt-6">
+            <button className="w-full lg:w-[219px] h-[60px] py-[12px] px-[40px] rounded-[30px] bg-[#1A1B4B] text-white mt-6">
               Learn more
             </button>
           </div>

@@ -8,36 +8,72 @@ const Header = () => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const location = useLocation();
   const isCheckoutPage = location.pathname === "/checkout";
+  const navigate = useNavigate();
 
   const handleMobileNavToggle = () => {
     setIsMobileNavVisible(!isMobileNavVisible);
   };
 
+  const handleNavLinkClick = (to, type) => {
+    if (type === "scroll") {
+      if (location.pathname !== "/") {
+        navigate("/", { replace: true, state: { target: to } });
+      } else {
+        document.getElementById(to)?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(to);
+    }
+    setIsMobileNavVisible(false); // Close mobile nav after clicking link
+  };
+
   return (
     <header className="w-full flex items-center justify-center relative">
-      <div className="w-full max-w-[1512px] h-[108px] p-[20px_100px] flex justify-between items-center">
-        <div className="flex items-center w-full lg:w-[697px] gap-[154px]">
-          <img
-            src={logoSvg}
-            alt="Logo"
-            className="w-[62px] h-[68px] p-[10px]"
-          />
+      <div className="w-full lg:max-w-[1512px] h-[108px] p-[20px_100px]  flex justify-between items-center">
+        <div className="flex items-center w-full  gap-10 lg:gap-[154px]">
+          {!isMobileNavVisible && (
+            <img
+              src={logoSvg}
+              alt="Logo"
+              className="w-[62px] h-[68px] p-[10px]"
+            />
+          )}
           <nav className="hidden lg:flex gap-[30px]">
-            <NavLink to="home" text="Home" type="scroll" />
-            <NavLink to="/cart" text="Cart" type="route" />
-            <NavLink to="/checkout" text="Check Out" type="route" />
-            <NavLink to="product" text="Product" type="scroll" />
+            <NavLink
+              to="home"
+              text="Home"
+              type="scroll"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
+              to="/cart"
+              text="Cart"
+              type="route"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
+              to="/checkout"
+              text="Check Out"
+              type="route"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
+              to="product"
+              text="Product"
+              type="scroll"
+              onClick={handleNavLinkClick}
+            />
           </nav>
         </div>
         <div
           className={`hidden lg:flex items-center w-[560px] h-[60px] gap-[33px] ${
-            isCheckoutPage ? "justify-center" : ""
+            isCheckoutPage ? "justify-center items-center" : ""
           }`}
         >
           <input
             type="text"
             placeholder="Search..."
-            className="w-[362px] h-[58px] p-[10px_15px] border border-[#B7B3B3] rounded-[40px]"
+            className="w-full lg:w-[362px] h-[58px] p-[10px_15px] border border-[#B7B3B3] rounded-[40px]"
           />
           {!isCheckoutPage && (
             <button className="w-[165px] h-[60px] p-[12px_40px] bg-[#1A1B4B] text-white rounded-[30px]">
@@ -48,29 +84,49 @@ const Header = () => {
         <div className="lg:hidden flex items-center relative z-50">
           <button onClick={handleMobileNavToggle}>
             {isMobileNavVisible ? (
-              <FaTimes size={30} className="text-gray-800" />
+              <FaTimes size={30} className="text-gray-800 ml-auto mr-4" />
             ) : (
-              <FaBars size={30} className="text-gray-800" />
+              <FaBars size={30} className="text-gray-800 ml-auto mr-4" />
             )}
           </button>
         </div>
       </div>
       {isMobileNavVisible && (
-        <div className="fixed inset-0 top-[108px] bg-gray-300 flex flex-col items-center lg:hidden p-[20px] z-50">
-          <nav className="flex flex-col gap-[20px]">
-            <NavLink to="home" text="Home" type="scroll" />
-            <NavLink to="/cart" text="Cart" type="route" />
-            <NavLink to="/checkout" text="Check Out" type="route" />
-            <NavLink to="product" text="Product" type="scroll" />
+        <div className="fixed inset-0 top-[108px] bg-white flex flex-col items-left lg:hidden p-[40px] z-50">
+          <nav className="flex flex-col gap-[20px] font-bold text-[16px] leading-8 text-[#1A1B4B]">
+            <NavLink
+              to="home"
+              text="Home"
+              type="scroll"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
+              to="/cart"
+              text="Cart"
+              type="route"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
+              to="/checkout"
+              text="Check Out"
+              type="route"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
+              to="product"
+              text="Product"
+              type="scroll"
+              onClick={handleNavLinkClick}
+            />
           </nav>
-          <div className="flex flex-col items-center w-full gap-[20px] mt-[20px]">
+          <div className="flex flex-col items-center w-full gap-[20px] mt-[40px]">
             <input
               type="text"
               placeholder="Search..."
-              className="w-full max-w-[362px] h-[58px] p-[10px_15px] border border-[#B7B3B3] rounded-[40px]"
+              className="w-full lg:max-w-[362px] h-[58px] p-[10px_15px] border border-[#B7B3B3] rounded-[40px]"
             />
             {!isCheckoutPage && (
-              <button className="w-full max-w-[165px] h-[60px] p-[12px_40px] bg-[#1A1B4B] text-white rounded-[30px]">
+              <button className="w-full h-[60px] p-[12px 40px] bg-[#1A1B4B] text-white rounded-[30px]">
                 Sign In
               </button>
             )}
@@ -81,20 +137,9 @@ const Header = () => {
   );
 };
 
-const NavLink = ({ to, text, type }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
+const NavLink = ({ to, text, type, onClick }) => {
   const handleClick = () => {
-    if (type === "scroll") {
-      if (location.pathname !== "/") {
-        navigate("/", { replace: true, state: { target: to } });
-      } else {
-        document.getElementById(to)?.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate(to);
-    }
+    onClick(to, type);
   };
 
   return (

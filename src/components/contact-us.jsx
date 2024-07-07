@@ -7,11 +7,11 @@ const ContactUs = () => {
   return (
     <section
       id="contact"
-      className="w-full justify-center flex items-center mt-20 lg:mt-[250px]"
+      className="w-full justify-center flex items-center mt-10 lg:mt-[250px]"
     >
-      <div className="relative w-full bg-[#1A1B4B] rounded-[2px]">
+      <div className="relative w-full bg-[#1A1B4B] rounded-[2px] py-10 lg:py-2">
         <div className="relative w-full  mx-auto flex flex-col lg:flex-row rounded-[5px]">
-          <div className="flex flex-col w-full lg:w-[full] py-20 px-10 lg:px-12">
+          <div className="flex flex-col w-full lg:w-[full] py-2 lg:py-20 px-10 lg:px-12">
             <div className="flex flex-col gap-8">
               <h1 className="text-3xl lg:text-5xl font-bold leading-[1.3] text-white">
                 Maximize the efficiency of your workforce today!
@@ -39,7 +39,7 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className="relative flex-shrink-0">
+          <div className="relative flex-shrink-0 mt-8">
             <img
               src={contactImage}
               alt="Contact"
