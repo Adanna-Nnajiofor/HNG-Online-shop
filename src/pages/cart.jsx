@@ -26,7 +26,7 @@ const Cart = () => {
 
   return (
     <section className="w-full flex items-center justify-center px-6 md:px-8">
-      <div className="w-full max-w-[1312px] h-auto lg:mt-[40px] gap-[55px] flex flex-col items-center justify-center">
+      <div className="w-full max-w-[1312px] h-auto lg:mt-[40px] gap-6 lg:gap-[55px] flex flex-col items-center justify-center">
         <div className="w-full max-w-[1314px] h-auto gap-[16px] flex flex-col-reverse md:flex-row">
           <div className="w-full max-w-[649px] h-auto gap-0 lg:gap-[10px]">
             <img
@@ -99,12 +99,12 @@ const Cart = () => {
         </div>
 
         <div className="flex flex-col w-full items-center md:items-start">
-          <div className="w-full max-w-[1314px] h-auto gap-[19px] flex flex-col">
+          <div className="w-full lg:max-w-[1314px] h-auto gap-[19px] flex flex-col">
             <p className="font-inter text-[20px] font-[700] leading-[36px] text-left text-[#303030]">
               New Products
             </p>
             <div className="flex flex-col md:flex-row gap-[30px]">
-              <div className="w-full max-w-[646.5px] h-auto gap-[23px] flex flex-row">
+              <div className="w-full lg:max-w-[646.5px] h-auto gap-2 lg:gap-[23px] flex flex-row">
                 {newProducts.map((product) => (
                   <div
                     key={product.id}
@@ -113,7 +113,7 @@ const Cart = () => {
                     <img
                       src={product.img}
                       alt={`Product ${product.id}`}
-                      className="w-full max-w-[200px] h-[126px] rounded-[20px]"
+                      className="w-full lg:max-w-[200px] h-auto lg:h-[126px] rounded-2xl lg:rounded-[20px]"
                     />
                   </div>
                 ))}

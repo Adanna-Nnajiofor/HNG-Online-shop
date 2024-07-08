@@ -7,7 +7,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 const Footer = () => {
   return (
     <footer className="w-full bg-[#1A1B4B] mt-6 lg:mt-10 justify-center flex items-center">
-      <div className="w-full max-w-[1512px] mx-auto flex flex-col gap-6 justify-between items-center py-4 px-6 lg:px-0">
+      <div className="w-full  mx-auto flex flex-col gap-6 justify-between items-center py-4 px-6 lg:px-0">
         <div className="flex flex-col lg:flex-row w-full items-start justify-between px-[20px] lg:mt-10 lg:px-[50px]">
           {/* Footer Text */}
           <div className="flex flex-col w-full lg:w-[360px] lg:mr-8">
@@ -62,10 +62,10 @@ const Footer = () => {
         </div>
 
         {/* Border */}
-        <div className="w-full lg:w-[1300px] h-0 border-t-2 border-[#D9DAF2] opacity-50 mt-0 lg:mt-8"></div>
+        <div className="w-full mx-8 h-0 border-t-2 border-[#D9DAF2] opacity-50 mt-0 lg:mt-8"></div>
 
         {/* Footer Below */}
-        <div className="flex flex-col lg:flex-row justify-between w-full lg:w-[1180px] mt-0 lg:mt-6 pb-4 lg:pb-6">
+        <div className="flex flex-col lg:flex-row justify-between w-full px-8 mt-0 lg:mt-6 pb-4 lg:pb-6">
           <div className="text-white text-sm lg:text-base">
             <span className="mr-4">Terms of Service</span>
             <span>|</span>

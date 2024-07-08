@@ -4,7 +4,7 @@ import MainContent from "../checkout components/main-content";
 
 const Checkout = () => {
   return (
-    <section className=" w-full justify-center flex flex-col items-center">
+    <section className=" w-full justify-center flex flex-col items-center ">
       <Sidebar />
       <MainContent />
     </section>

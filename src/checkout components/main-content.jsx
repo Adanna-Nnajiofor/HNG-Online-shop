@@ -4,11 +4,11 @@ import Summary from "./summary";
 
 const MainContent = () => {
   return (
-    <div className="w-full lg:w-[1139px] h-full py-6 lg:top-[10px] lg:left-[130px] px-6 lg:p-[33px_50px_19px_50px] bg-[#FFFFFF] flex flex-col items-center justify-center relative lg:mb-[50px]">
+    <div className="w-full lg:w-[1139px] h-full py-6 lg:top-[10px] lg:left-[90px] px-6 lg:p-[33px_50px_19px_50px] bg-[#FFFFFF] flex flex-col items-center justify-center relative lg:mb-[50px]">
       {/* Checkout Main A */}
-      <div className="w-full lg:w-[1039px] h-auto lg:h-[816px] lg:top-[33px] lg:left-[50px] gap-[10px] justify-between flex flex-col lg:flex-row">
+      <div className="w-full lg:w-auto h-auto lg:h-[816px] lg:top-[33px]  gap-[10px] justify-between flex flex-col lg:flex-row">
         {/* Checkout Main A1 */}
-        <div className="w-full lg:w-[510px] h-auto lg:h-[816px] gap-[12px] flex flex-col">
+        <div className="w-full lg:w-[400px] h-auto lg:h-[816px] gap-[12px] flex flex-col">
           {/* Checkout Main A1 Text */}
           <div className="w-full h-[100px] gap-[0px]">
             <p className="font-family-Inter text-lg font-bold text-[#343697]">
