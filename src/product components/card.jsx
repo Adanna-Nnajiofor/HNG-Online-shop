@@ -13,7 +13,7 @@ const Card = ({ image, title, description, price, buttonText }) => {
       <div className="w-full h-auto rounded-[20px] overflow-hidden">
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
-      <div className="flex flex-col justify-between flex-grow">
+      <div className="w-full flex flex-col justify-between flex-grow">
         <div>
           <h2 className="font-inter text-2xl font-bold leading-9 text-[#303030]">
             {title}
