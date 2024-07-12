@@ -1,8 +1,8 @@
 import React from "react";
-import HeroSection from "./hero-section";
-import Product from "./product";
-import AboutUs from "./about-us";
-import ContactUs from "./contact-us";
+import HeroSection from "../components/hero-section";
+import Product from "../components/product";
+import AboutUs from "../components/about-us";
+import ContactUs from "../components/contact-us";
 
 const Home = () => {
   return (
