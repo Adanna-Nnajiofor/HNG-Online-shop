@@ -5,7 +5,7 @@ import Summary from "../checkout components/summary";
 
 const Checkout = () => {
   return (
-    <section className="w-full lg:max-w-[1512px] flex flex-col lg:flex-row lg:justify-between p-6 lg:p-10">
+    <section className="w-full lg:max-w-[1512px] flex flex-col lg:flex-row lg:justify-between px-10 py-2 lg:p-10">
       {/* Sidebar - visible on large screens */}
       <div className="hidden lg:flex lg:w-[270px] lg:flex-shrink-0 lg:fixed top-0 left-0 h-full border-r border-gray-300 bg-gray-100">
         <Sidebar />

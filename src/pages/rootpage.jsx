@@ -8,7 +8,7 @@ const RootPage = () => {
   const isCheckoutPage = location.pathname === "/checkout";
 
   return (
-    <div className="flex flex-col h-full w-full items-center justify-center">
+    <div className="flex flex-col h-full w-full ">
       <Header />
       <main>
         <Outlet />

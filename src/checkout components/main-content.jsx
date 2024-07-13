@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa";
 
 const MainContent = () => {
   return (
-    <div className="w-full h-full px-6 bg-white flex flex-col gap-6 lg:gap-12">
+    <div className="w-full h-full  bg-white flex flex-col gap-6 lg:gap-12">
       <div className="w-full">
         <p className="text-lg font-bold text-blue-700">Step 01</p>
         <h1 className="text-4xl font-bold text-blue-900">Shipping</h1>

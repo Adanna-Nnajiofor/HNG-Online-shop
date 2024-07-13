@@ -20,7 +20,7 @@ const Card = ({
 
   return (
     <div className="w-full h-[500px] flex flex-col rounded-[20px] border border-solid border-[#948E8E] p-4 bg-white hover:border-2 border-[#1A1B4B]">
-      <div className="w-full h-[250px] rounded-[20px] overflow-hidden">
+      <div className="w-auto h-auto rounded-[20px] overflow-hidden">
         <img
           src={`https://api.timbu.cloud/images/${image}`}
           alt={title}
