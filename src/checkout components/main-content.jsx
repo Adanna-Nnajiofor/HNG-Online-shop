@@ -4,99 +4,52 @@ import Summary from "./summary";
 
 const MainContent = () => {
   return (
-    <div className="w-full lg:w-[1139px] h-full py-6 lg:top-[10px] lg:left-[90px] px-6 lg:p-[33px_50px_19px_50px] bg-[#FFFFFF] flex flex-col items-center justify-center relative lg:mb-[50px]">
-      {/* Checkout Main A */}
-      <div className="w-full lg:w-auto h-auto lg:h-[816px] lg:top-[33px]  gap-[10px] justify-between flex flex-col lg:flex-row">
-        {/* Checkout Main A1 */}
-        <div className="w-full lg:w-[400px] h-auto lg:h-[816px] gap-[12px] flex flex-col">
-          {/* Checkout Main A1 Text */}
-          <div className="w-full h-[100px] gap-[0px]">
-            <p className="font-family-Inter text-lg font-bold text-[#343697]">
-              Step 01
-            </p>
-            <h1 className="font-family-Inter text-4xl font-bold text-left text-[#0C092A]">
-              Shipping
-            </h1>
-          </div>
-          {/* Checkout Main A1 Input */}
-          <div className="w-full h-auto gap-[30px] flex flex-col">
-            {/* Input 1 - Full Name */}
-            <div className="flex flex-col gap-[10px]">
-              <label className="font-family-Inter text-[20px] font-[700] leading-[36px]">
-                Full Name
-              </label>
-              <input
-                type="text"
-                placeholder="Chika Obi"
-                className="input-style rounded-[20px] border-[1px] p-[10px] gap-[10px] border-[#6B6B6B]"
-              />
-            </div>
-            {/* Input 2 - Country */}
-            <div className="flex flex-col gap-[10px]">
-              <label className="font-family-Inter text-[20px] font-[700] leading-[36px]">
-                Country
-              </label>
-              <select className="input-style rounded-[20px] border-[1px] p-[10px] gap-[10px] border-[#6B6B6B]">
-                <option value="Nigeria">Nigeria</option>
-                {/* Add more country options here */}
-              </select>
-            </div>
-            {/* Input 3 - Address */}
-            <div className="flex flex-col gap-[10px]">
-              <label className="font-family-Inter text-[20px] font-[700] leading-[36px]">
-                Address
-              </label>
-              <input
-                type="text"
-                placeholder="Chika Obi"
-                className="input-style rounded-[20px] border-[1px] p-[10px] gap-[10px] border-[#6B6B6B]"
-              />
-              <input
-                type="text"
-                placeholder="Select State"
-                className="input-style rounded-[20px] border-[1px] p-[10px] gap-[10px] border-[#6B6B6B]"
-              />
-              <input
-                type="text"
-                placeholder="City"
-                className="input-style rounded-[20px] border-[1px] p-[10px] gap-[10px] border-[#6B6B6B]"
-              />
-            </div>
-            {/* Input 4 - Postal Code */}
-            <div className="flex flex-col gap-[10px]">
-              <label className="font-family-Inter text-[20px] font-[700] leading-[36px]">
-                Postal Code
-              </label>
-              <input
-                type="text"
-                placeholder="........"
-                className="input-style rounded-[20px] border-[1px] p-[10px] gap-[10px] border-[#6B6B6B]"
-              />
-            </div>
-            {/* Input 5 - Phone Number */}
-            <div className="flex flex-col gap-[10px]">
-              <label className="font-family-Inter text-[20px] font-[700] leading-[36px]">
-                Phone Number
-              </label>
-              <input
-                type="text"
-                placeholder="+234"
-                className="input-style rounded-[20px] border-[1px] p-[10px] gap-[10px] border-[#6B6B6B]"
-              />
-            </div>
-            {/* Check Good */}
-            <div className="flex flex-row items-center gap-[10px] ">
-              <FaCheck size={24} />
-              <p className="font-family-Inter text-lg font-medium ">
-                Use as billing address
-              </p>
-            </div>
+    <div className="w-full max-w-full  lg:gap-[100px] h-full py-6 lg:py-10 px-6  bg-white flex flex-col lg:flex-row  ">
+      <div className="w-full h-auto flex flex-col gap-6 lg:gap-8 lg:left-10 relative">
+        <div className="w-full h-auto">
+          <p className="text-lg font-bold text-blue-700">Step 01</p>
+          <h1 className="text-4xl font-bold text-blue-900">Shipping</h1>
+        </div>
+        <div className="w-full flex flex-col gap-6">
+          <InputField label="Full Name" placeholder="Chika Obi" />
+          <SelectField label="Country" options={["Nigeria"]} />
+          <InputField label="Address" placeholder="Address" />
+          <InputField label="City" placeholder="City" />
+          <InputField label="Postal Code" placeholder="Postal Code" />
+          <InputField label="Phone Number" placeholder="+234" />
+          <div className="flex items-center gap-2">
+            <FaCheck size={24} />
+            <p className="text-lg font-medium">Use as billing address</p>
           </div>
         </div>
-        <Summary />
       </div>
+      <Summary />
     </div>
   );
 };
+
+const InputField = ({ label, placeholder }) => (
+  <div className="w-full flex flex-col gap-2">
+    <label className="text-xl font-semibold">{label}</label>
+    <input
+      type="text"
+      placeholder={placeholder}
+      className="input-style w-full rounded-lg border border-gray-400 p-3"
+    />
+  </div>
+);
+
+const SelectField = ({ label, options }) => (
+  <div className="w-full flex flex-col gap-2">
+    <label className="text-xl font-semibold">{label}</label>
+    <select className="input-style w-full rounded-lg border border-gray-400 p-3">
+      {options.map((option, index) => (
+        <option key={index} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+  </div>
+);
 
 export default MainContent;

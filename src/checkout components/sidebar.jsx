@@ -7,41 +7,32 @@ import { IoSettingsOutline } from "react-icons/io5";
 
 const Sidebar = () => {
   return (
-    <div className="w-full lg:w-auto h-[982px] left-[1px] p-[0px 60px 0px 60px] gap-[48px] border-[0px_1px_0px_0px] bg-[#E1E1E1] border-r-[1px solid #000000] hidden lg:flex lg:flex-col top-0 bottom-0 lg:fixed ">
-      {/* Sidebar 1 */}
-      <div className="w-full lg:w-[270px] h-[488px] p-[60px] gap-[60px] mt-[150px]">
-        {/* Sidebar 1A */}
-        <div className="w-full lg:w-[200px] h-[48px] p-[10px] gap-[50px] rounded-[10px] bg-[#6769CA] text-white flex flex-row items-center mb-[60px]">
+    <div className="hidden lg:flex w-auto lg:w-[270px] h-auto lg:h-[982px] p-4 lg:p-6 gap-6 lg:gap-8 border-r border-gray-300 bg-gray-100 flex flex-col absolute top-0 left-0 ">
+      <div className="flex flex-col gap-6 mt-8">
+        <div className="w-full bg-blue-500 text-white rounded-lg p-4 flex items-center">
           <FaShoppingCart size={30} />
-          <p className="font-family-Inter text-lg font-bold ml-2">Checkout</p>
+          <p className="ml-2 text-lg font-bold">Checkout</p>
         </div>
-        {/* Sidebar 1B */}
-        <div className="flex flex-col gap-[50px]">
-          {/* Sidebar 1B Items */}
-          <div className="flex flex-row items-center">
-            <FaRegEnvelope size={30} />
-            <p className="font-inter text-lg font-normal ml-2">Message </p>
-          </div>
-          <div className="flex flex-row items-center">
-            <IoCartOutline size={30} />
-            <p className="font-inter text-lg font-normal ml-2">Cart</p>
-          </div>
-          <div className="flex flex-row items-center">
-            <FaRegEnvelope size={30} />
-            <p className="font-inter text-lg font-normal ml-2">Home</p>
-          </div>
-          <div className="flex flex-row items-center">
-            <IoIosNotificationsOutline size={30} />
-            <p className="font-inter text-lg font-normal ml-2">Notification</p>
-          </div>
-          <div className="flex flex-row items-center">
-            <IoSettingsOutline size={30} />
-            <p className="font-inter text-lg font-normal ml-2">Setting</p>
-          </div>
+        <div className="flex flex-col gap-4">
+          <SidebarItem icon={<FaRegEnvelope size={30} />} text="Message" />
+          <SidebarItem icon={<IoCartOutline size={30} />} text="Cart" />
+          <SidebarItem icon={<FaRegEnvelope size={30} />} text="Home" />
+          <SidebarItem
+            icon={<IoIosNotificationsOutline size={30} />}
+            text="Notification"
+          />
+          <SidebarItem icon={<IoSettingsOutline size={30} />} text="Setting" />
         </div>
       </div>
     </div>
   );
 };
+
+const SidebarItem = ({ icon, text }) => (
+  <div className="flex items-center">
+    {icon}
+    <p className="ml-2 text-lg font-normal">{text}</p>
+  </div>
+);
 
 export default Sidebar;

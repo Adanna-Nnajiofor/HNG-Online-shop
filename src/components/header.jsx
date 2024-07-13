@@ -42,6 +42,12 @@ const Header = () => {
               onClick={handleNavLinkClick}
             />
             <NavLink
+              to="product"
+              text="Product"
+              type="scroll"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
               to="/cart"
               text="Cart"
               type="route"
@@ -53,17 +59,11 @@ const Header = () => {
               type="route"
               onClick={handleNavLinkClick}
             />
-            <NavLink
-              to="product"
-              text="Product"
-              type="scroll"
-              onClick={handleNavLinkClick}
-            />
           </nav>
         </div>
         <div
           className={`hidden lg:flex items-center w-full lg:w-[560px] h-[60px] gap-[33px] ${
-            isCheckoutPage ? "justify-center items-center" : ""
+            isCheckoutPage ? "w-full justify-center items-center" : ""
           }`}
         >
           <input
@@ -97,6 +97,12 @@ const Header = () => {
               onClick={handleNavLinkClick}
             />
             <NavLink
+              to="product"
+              text="Product"
+              type="scroll"
+              onClick={handleNavLinkClick}
+            />
+            <NavLink
               to="/cart"
               text="Cart"
               type="route"
@@ -106,12 +112,6 @@ const Header = () => {
               to="/checkout"
               text="Check Out"
               type="route"
-              onClick={handleNavLinkClick}
-            />
-            <NavLink
-              to="product"
-              text="Product"
-              type="scroll"
               onClick={handleNavLinkClick}
             />
           </nav>

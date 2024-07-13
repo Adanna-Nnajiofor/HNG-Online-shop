@@ -1,98 +1,65 @@
 import React from "react";
-import { FaCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import shoe1 from "../assets/images/Rectangle 1041.png";
-import shoe2 from "../assets/images/Rectangle 1043.png";
+import { useCart } from "../context/CartContext";
 
 const Summary = () => {
+  const { cartItems } = useCart();
   const navigate = useNavigate();
 
-  const summaryItems = [
-    { id: 1, image: shoe1, name: "Canvas Shoe", price: "$1,120" },
-    { id: 2, image: shoe2, name: "Canvas Shoe", price: "$1,120" },
-    { id: 3, image: shoe1, name: "Canvas Shoe", price: "$1,120" },
-  ];
+  // Calculate total amount
+  const calculateTotalAmount = () => {
+    return cartItems.reduce((acc, item) => {
+      const itemPrice = Math.ceil(item.current_price[0]?.LRD[0] || 0);
+      return acc + itemPrice * item.quantity;
+    }, 0);
+  };
+
+  const totalAmount = Math.ceil(calculateTotalAmount());
 
   const handleProceedToPayment = () => {
-    navigate("/");
+    navigate("/payment");
   };
 
   return (
-    <div className="w-full lg:w-[460px] h-auto lg:h-[754px] gap-[43px] flex flex-col mt-10 lg:mt-0">
-      <div className="w-full lg:w-[460px] h-auto lg:h-[66px] gap-[5px] flex flex-row justify-between">
-        <div className="flex flex-row items-center">
-          <div className=" bg-blue-500 rounded-full flex items-center justify-center">
-            <p className="font-family-Inter text-lg font-bold text-white">02</p>
-          </div>
-          <div className="flex flex-col ml-3">
-            <p className="font-family-Inter text-lg font-bold text-[#343697]">
-              Step 02
-            </p>
-            <p className="font-family-Inter text-2xl font-bold text-[#6B6B6B]">
-              Payment
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-row items-center ml-10">
-          <div className=" bg-blue-500 rounded-full flex items-center justify-center">
-            <p className="font-family-Inter text-lg font-bold text-white">03</p>
-          </div>
-          <div className="flex flex-col ml-3">
-            <p className="font-family-Inter text-lg font-bold text-[#343697]">
-              Step 03
-            </p>
-            <p className="font-family-Inter text-2xl font-bold text-[#6B6B6B]">
-              Review
-            </p>
-          </div>
-        </div>
+    <div className="w-full max-w-full   h-auto lg:h-auto gap-6 flex flex-col mt-10 lg:mt-0">
+      <div className="w-full lg:w-full h-auto flex flex-col lg:flex-row justify-between items-center">
+        <StepIndicator step="02" title="Payment" />
+        <StepIndicator step="03" title="Review" />
       </div>
 
-      <div className="w-full lg:w-auto h-auto  p-6 gap-[10px] rounded-[30px] bg-[#F2F2F7] items-center justify-center flex flex-col">
-        <div className="w-full lg:w-full h-auto  gap-[20px] flex flex-col">
-          <h2 className="font-family-Inter text-4xl font-bold">Summary</h2>
-          <div className="w-full flex flex-col gap-[30px] justify-between">
-            {summaryItems.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-row items-center gap-[20px] justify-between"
-              >
-                <div className="w-auto h-auto rounded-[10px] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-[76px] h-[74px] object-cover"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <p className="font-inter text-lg font-medium">{item.name}</p>
-                  <p className="font-inter text-2xl font-bold">{item.price}</p>
-                </div>
+      <div className="w-full lg:w-auto h-auto p-6 gap-4 rounded-xl bg-gray-100 flex flex-col">
+        <h2 className="text-4xl font-bold mb-4">Summary</h2>
+        <div className="w-full flex flex-col gap-6">
+          {cartItems.map((item) => (
+            <div
+              key={item.id}
+              className="w-full flex items-center gap-4 justify-between"
+            >
+              <div className="w-[76px] h-[74px] overflow-hidden rounded-lg">
+                <img
+                  src={item.photos[0]?.url || "/path/to/placeholder-image.jpg"}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
-          </div>
+              <div className="flex flex-col">
+                <p className="text-lg font-medium">{item.name}</p>
+                <p className="text-2xl font-bold">
+                  {Math.ceil(item.current_price[0]?.LRD[0])}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="w-full lg:w-auto h-auto lg:h-[204px] p-[20px_0px] gap-[40px] border-t-[1px solid #000000] flex flex-col items-center justify-between">
-          <div className="flex flex-row justify-between items-center gap-4 lg:gap-[100px]">
-            <div className="flex">
-              <FaCheck size={24} />
-              <p className="font-family-Inter text-[24px] font-bold leading-[28px] text-[#6B6B6B]">
-                Total
-              </p>
-            </div>
-            <div className="w-full lg:w-auto h-[64px] gap-[0px] flex flex-col items-end">
-              <p className="font-family-Inter text-[24px] leading-[28px] text-right font-bold text-[#343697]">
-                $ 4,500.00
-              </p>
-              <p className="font-family-Inter text-[16px] font-medium leading-[36px] text-right">
-                Import duties included
-              </p>
-            </div>
-          </div>
+        <div className="w-full lg:w-auto h-auto p-4 gap-4 rounded-xl bg-white flex flex-col items-center">
+          <p className="text-gray-600 text-lg font-semibold">Total Amount</p>
+          <p className="text-4xl font-bold text-gray-900 mb-4">
+            {totalAmount.toFixed(2)}
+          </p>
           <button
-            className="w-full  h-[60px] p-[12px 40px] gap-[10px] rounded-[30px] bg-[#272971] text-white"
             onClick={handleProceedToPayment}
+            className="w-full lg:w-[286px] h-[51px] bg-blue-900 rounded-full text-white text-lg font-semibold"
           >
             Proceed to Payment
           </button>
@@ -101,5 +68,17 @@ const Summary = () => {
     </div>
   );
 };
+
+const StepIndicator = ({ step, title }) => (
+  <div className="flex items-center">
+    <div className="bg-blue-500 rounded-full flex items-center justify-center w-12 h-12">
+      <p className="text-lg font-bold text-white">{step}</p>
+    </div>
+    <div className="flex flex-col ml-3">
+      <p className="text-lg font-bold text-blue-700">Step {step}</p>
+      <p className="text-2xl font-bold text-gray-600">{title}</p>
+    </div>
+  </div>
+);
 
 export default Summary;
