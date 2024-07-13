@@ -29,13 +29,13 @@ const Card = ({
       </div>
       <div className="w-full h-auto flex flex-col justify-between flex-grow">
         <div>
-          <h2 className="font-inter text-2xl font-bold leading-9 text-[#303030]">
+          <h2 className="font-inter text-2xl mt-2 font-bold leading-9 text-[#303030]">
             {title}
           </h2>
-          <p className="font-inter text-lg font-normal leading-7 text-[#303030]">
+          <p className="font-inter text-lg mt-2 font-normal leading-7 text-[#303030]">
             {description}
           </p>
-          <p className="font-inter text-xl font-medium leading-9 text-[#F7A400]">
+          <p className="font-inter text-xl mt-4 font-medium leading-9 text-[#F7A400]">
             ${price}
           </p>
         </div>

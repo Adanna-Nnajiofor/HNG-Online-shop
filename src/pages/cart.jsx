@@ -48,7 +48,8 @@ const Cart = () => {
                 >
                   <img
                     src={
-                      item.photos[0]?.url || "/path/to/placeholder-image.jpg"
+                      `https://api.timbu.cloud/images/${item.photos[0]?.url}` ||
+                      "/path/to/placeholder-image.jpg"
                     } // Fallback image
                     alt={item.title}
                     className="w-24 h-24 object-cover rounded-md"
@@ -89,7 +90,7 @@ const Cart = () => {
             <div className="w-full flex items-center justify-between mt-6">
               <button
                 onClick={clearCart}
-                className="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600"
+                className="py-2 px-4 bg-red-800 text-white rounded-lg hover:bg-red-600"
               >
                 Clear Cart
               </button>
@@ -98,7 +99,7 @@ const Cart = () => {
               </div>
               <button
                 onClick={handleAddToCart}
-                className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
+                className="py-2 px-4 bg-[#1A1B4B] text-white rounded-lg hover:bg-blue-600"
               >
                 Checkout
               </button>

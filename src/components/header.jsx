@@ -29,10 +29,10 @@ const Header = () => {
 
   return (
     <header className="w-full flex items-center justify-center relative">
-      <div className="w-full lg:max-w-[1512px] h-[108px] p-[20px_100px]  flex justify-between items-center">
-        <div className="flex items-center w-full   lg:gap-[145px]">
+      <div className="w-full lg:max-w-[1512px] h-[108px] p-[20px_20px] lg:p-[20px_80px] flex justify-between items-center">
+        <div className="flex items-center w-full md:gap-[80px] lg:gap-[140px]">
           {!isMobileNavVisible && (
-            <img src={logoSvg} alt="Logo" className="w-[62px] h-[68px] " />
+            <img src={logoSvg} alt="Logo" className="w-[40px] lg:w-[50px]" />
           )}
           <nav className="hidden lg:flex lg:gap-[30px]">
             <NavLink
@@ -69,20 +69,21 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search..."
-            className="w-full lg:w-[300px] h-[58px] p-[10px_15px] border border-[#B7B3B3] rounded-[40px]"
+            className="w-full md:w-[200px] lg:w-auto h-[50px] p-[10px_15px] border border-[#B7B3B3] rounded-[40px]"
           />
+          {/* Show Sign In button on desktop screens except on Checkout page */}
           {!isCheckoutPage && (
-            <button className="w-full lg:w-[165px] h-[60px] p-[12px_40px] bg-[#1A1B4B] text-white rounded-[30px]">
+            <button className="w-full lg:w-[165px] h-[50px] p-[12px_40px] bg-[#1A1B4B] text-white rounded-[30px]">
               Sign In
             </button>
           )}
         </div>
-        <div className="lg:hidden flex  justify-between relative z-50">
+        <div className="lg:hidden flex justify-between relative z-50">
           <button onClick={handleMobileNavToggle}>
             {isMobileNavVisible ? (
-              <FaTimes size={30} className="text-gray-800 ml-auto mr-0" />
+              <FaTimes size={25} className="text-gray-800 ml-auto mr-0" />
             ) : (
-              <FaBars size={30} className="text-gray-800 ml-auto mr-0" />
+              <FaBars size={25} className="text-gray-800 ml-auto mr-0" />
             )}
           </button>
         </div>
@@ -121,11 +122,10 @@ const Header = () => {
               placeholder="Search..."
               className="w-full lg:max-w-[362px] h-[58px] p-[10px_15px] border border-[#B7B3B3] rounded-[40px]"
             />
-            {!isCheckoutPage && (
-              <button className="w-full h-[60px] p-[12p_40px] bg-[#1A1B4B] text-white rounded-[30px]">
-                Sign In
-              </button>
-            )}
+            {/* Show Sign In button on mobile screens, including Checkout page */}
+            <button className="w-full h-[60px] p-[12px_40px] bg-[#1A1B4B] text-white rounded-[30px]">
+              Sign In
+            </button>
           </div>
         </div>
       )}
