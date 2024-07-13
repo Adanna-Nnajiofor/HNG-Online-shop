@@ -39,11 +39,11 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className="w-auto  h-auto flex flex-col px-4 mt-8 py-4 ">
+          <div className="w-auto h-auto flex flex-col px-4 mt-8 py-4 ">
             <img
               src={contactImage}
               alt="Contact"
-              className="w-auto h-auto items-center justify-center relative lg:mt-[-180px] lg:h-[520px] object-cover"
+              className="w-full h-full lg:mt-[-250px] object-cover"
             />
           </div>
         </div>
