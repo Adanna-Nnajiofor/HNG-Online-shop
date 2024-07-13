@@ -58,6 +58,7 @@ const Cart = () => {
                       {item.name}
                     </h2>
                     <p className="text-md text-[#303030]">
+                      $
                       {Math.ceil(item.current_price[0]?.LRD[0]) * item.quantity}
                     </p>
                     <div className="flex items-center mt-2">
@@ -93,7 +94,7 @@ const Cart = () => {
                 Clear Cart
               </button>
               <div className="text-lg font-bold">
-                Total: {Math.ceil(calculateTotalPrice())}
+                Total: ${Math.ceil(calculateTotalPrice())}
               </div>
               <button
                 onClick={handleAddToCart}

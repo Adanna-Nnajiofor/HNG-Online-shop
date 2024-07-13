@@ -45,7 +45,7 @@ const Summary = () => {
               <div className="flex flex-col">
                 <p className="text-lg font-medium">{item.name}</p>
                 <p className="text-2xl font-bold">
-                  {Math.ceil(item.current_price[0]?.LRD[0])}
+                  ${Math.ceil(item.current_price[0]?.LRD[0])}
                 </p>
               </div>
             </div>
@@ -55,7 +55,7 @@ const Summary = () => {
         <div className="w-full lg:w-auto h-auto p-4 gap-4 rounded-xl bg-white flex flex-col items-center">
           <p className="text-gray-600 text-lg font-semibold">Total Amount</p>
           <p className="text-4xl font-bold text-gray-900 mb-4">
-            {totalAmount.toFixed(2)}
+            ${totalAmount.toFixed(2)}
           </p>
           <button
             onClick={handleProceedToPayment}
