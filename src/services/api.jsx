@@ -1,8 +1,6 @@
 import axios from "axios";
 
-const API_URL = `/api/products?organization_id=${
-  import.meta.env.VITE_APP_ORGANIZATION_ID
-}&reverse_sort=false&page=`;
+const API_URL = "https://api.timbu.cloud/products";
 
 const GetProducts = async (page = 1, size = 10) => {
   try {
